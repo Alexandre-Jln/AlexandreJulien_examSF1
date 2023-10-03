@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,14 +14,23 @@ class RegistrationFromType extends AbstractType
     {
         $builder
             ->add('email')
-            ->add('roles')
+            ->add('roles',
+                ChoiceType::class, [
+                    'multiple' => true,
+                    'expanded' => true,
+                    'choices' => [
+                        'admin' => 'ROLE_ADMIN',
+                        'user' => 'ROLE_USER'
+                    ]])
             ->add('password')
             ->add('firstName')
             ->add('lastName')
             ->add('photo')
             ->add('sector')
             ->add('contractType')
-            ->add('departureDate')
+            ->add('departureDate',
+
+            )
         ;
     }
 
