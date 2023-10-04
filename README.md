@@ -1,4 +1,4 @@
-# Bonjour voici mon projet symfony👋
+# <p align="center">Bonjour voici mon projet symfony👋
 
 # <p align="center">Développement d’un annuaire d’entreprise</p>
   
